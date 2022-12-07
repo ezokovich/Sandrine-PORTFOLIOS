@@ -7,7 +7,7 @@
 
 :root {
   --color-primary: #191d2b;
-  --color-secondary: #27AE60;
+  --color-secondary: #c9eb50;
   --color-white: #FFFFFF;
   --color-black: #000;
   --color-grey0: #f8f8f8;
@@ -325,15 +325,13 @@ button{
 }
 .about-stats .progress-bars .progress-bar .progress-con .progress .js {
   width: 55%;
+  height: 10px;
 }
 .about-stats .progress-bars .progress-bar .progress-con .progress .react {
   width: 50%;
 }
 .about-stats .progress-bars .progress-bar .progress-con .progress .node {
   width: 50%;
-}
-.about-stats .progress-bars .progress-bar .progress-con .progress .python {
-  width: 10%;
 }
 
 .stat-title {
