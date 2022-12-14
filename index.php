@@ -6,10 +6,10 @@ $subject = $_POST["subject"];
 $message = $_POST["message"];
 
 
-$host = "localhost";
-$dbname = "portfolio";
-$username = "root";
-$password = "";
+$host = "mysql-sandrine.alwaysdata.net";
+$dbname = "sandrine_portfolio";
+$username = "sandrine";
+$password = "Mva3ille";
 
 $conn = mysqli_connect(hostname: $host,
                        username: $username, 
