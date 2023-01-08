@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link rel="stylesheet" href="styles/toastBar.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -17,6 +18,28 @@
             emailjs.init('TL783LB6SLLdMpSbB');
         })();
     </script>
+    <script>
+        function scrool() {
+            window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
+        }
+    </script>
+    <script>
+        function test() {
+    var x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+  }
+    </script>
+    <script>
+        function newFunction(){
+          var element = document.getElementById("contact-form");
+           element.reset()
+        }
+     </script>
     <script type="text/javascript">
         window.onload = function() {
             document.getElementById('contact-form').addEventListener('submit', function(event) {
@@ -26,13 +49,61 @@
                 // these IDs from the previous steps
                 emailjs.sendForm('service_y3h1lu5', 'template_74imbvp',this)
                     .then(function() {
+                        newFunction();
+                        
                         console.log('SUCCESS!');
+                        test()
+                        scrool()
+                        // document.location.reload();
                     }, function(error) {
                         console.log('FAILED...', error);
                     });
             });
         }
     </script>
+    <style>
+        #snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+  }
+  
+  #snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+    </style>
 </head>
 <body class="main-content">
     <header class="container header active" id="home">
@@ -353,7 +424,7 @@ My passion for digital was born just after I obtained my Baccalaureate second pa
                         </div>
                     </div>
                     <div class="right-contact">
-                        <form action="indexjk.php" method="POST" class="contact-form" id="contact-form" >
+                        <form  method="POST" class="contact-form" id="contact-form" >
                             <div class="input-control i-c-2">
                                 <input type="text" required placeholder="YOUR NAME" name="name">
                                 <input type="email" required placeholder="YOUR EMAIL" name="email">
@@ -398,5 +469,7 @@ My passion for digital was born just after I obtained my Baccalaureate second pa
         <i class="fas fa-adjust"></i>
     </div>
     <script src="app.js"></script>
+
+    <div id="snackbar">you have Submit Sucefully</div>
 </body>
 </html>
